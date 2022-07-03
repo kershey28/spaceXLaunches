@@ -1,0 +1,25 @@
+.icon,
+.iconAccent {
+  height: 2rem;
+  width: 2rem;
+}
+@media only screen and (max-width: 23.75em) {
+  .icon,
+.iconAccent {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+.icon {
+  fill: var(--clr-neutral-400);
+}
+
+.iconAccent {
+  fill: var(--clr-tertiary-300);
+}
+
+.text {
+  margin-left: 1rem;
+  color: var(--clr-tertiary-300);
+}/*# sourceMappingURL=Icons.module.css.map */

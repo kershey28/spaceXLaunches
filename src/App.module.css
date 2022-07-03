@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block: 5rem;
+}
+
+.input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  border-radius: 5px;
+  background-color: var(--clr-white-opacity-200);
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: inherit;
+  width: clamp(28rem, 80vw, 40rem);
+  padding: 1.5rem 2rem;
+  transition: all 0.3s;
+}
+.input:focus {
+  box-shadow: 0 1rem 2rem rgba(255, 255, 255, 0.2);
+  outline: none;
+  border-bottom: 3px solid var(--clr-secondary-300);
+}
+.input::-webkit-input-placeholder {
+  color: var(--clr-neutral-300);
+  text-align: center;
+}
+
+.input:-moz-placeholder-shown + .label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+
+.input:-ms-input-placeholder + .label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+
+.input:placeholder-shown + .label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+
+.label {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--clr-neutral-300);
+  margin-top: 0.7rem;
+  text-align: center;
+  display: block;
+  transition: all 0.3s;
+}
+
+.particle {
+  position: fixed;
+  bottom: 20%;
+  right: 35%;
+  z-index: -1;
+}
+@media only screen and (max-width: 23.75em) {
+  .particle {
+    bottom: 10%;
+  }
+}/*# sourceMappingURL=App.module.css.map */

@@ -1,0 +1,25 @@
+@use '../../styles/abstracts/breakpoints';
+
+.icon,
+.iconAccent {
+  height: 2rem;
+  width: 2rem;
+
+  @include breakpoints.respond(phone-mini) {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+.icon {
+  fill: var(--clr-neutral-400);
+}
+
+.iconAccent {
+  fill: var(--clr-tertiary-300);
+}
+
+.text {
+  margin-left: 1rem;
+  color: var(--clr-tertiary-300);
+}

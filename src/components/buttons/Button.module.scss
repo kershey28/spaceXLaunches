@@ -1,0 +1,42 @@
+@use '../../styles/abstracts/variables';
+
+.container {
+  //sizing
+  padding: 1.5rem 3rem;
+  width: max-content;
+
+  //typography
+  text-decoration: none;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-label);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+
+  //styling
+  color: var(--clr-primary-500);
+  box-shadow: variables.$shadow-white-light;
+  border-radius: 15px;
+  transition: all 0.2s;
+
+  //default
+  appearance: none;
+  cursor: pointer;
+
+  //layout
+  display: inline-block;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-2px);
+    color: var(--clr-neutral-100);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}

@@ -1,0 +1,107 @@
+.planet {
+  // position
+  display: block;
+  position: relative;
+  transform-style: preserve-3d;
+  border-radius: 50%;
+
+  // sizing
+  width: 125px;
+  height: 125px;
+
+  // styling
+  background: linear-gradient(
+    180deg,
+    var(--clr-primary-300) 0%,
+    var(--clr-primary-300) 15%,
+    var(--clr-primary-500) 15%,
+    var(--clr-primary-500) 19%,
+    var(--clr-primary-300) 19%,
+    var(--clr-primary-300) 22%,
+    var(--clr-primary-500) 22%,
+    var(--clr-primary-500) 28%,
+    var(--clr-primary-300) 28%,
+    var(--clr-primary-300) 31%,
+    var(--clr-primary-300) 33%,
+    var(--clr-primary-300) 36%,
+    var(--clr-primary-500) 36%,
+    var(--clr-primary-500) 48%,
+    var(--clr-primary-300) 48%,
+    var(--clr-primary-300) 55%,
+    var(--clr-primary-500) 55%,
+    var(--clr-primary-500) 66%,
+    var(--clr-primary-300) 66%,
+    var(--clr-primary-300) 70%,
+    var(--clr-primary-500) 70%,
+    var(--clr-primary-500) 73%,
+    var(--clr-primary-300) 73%,
+    var(--clr-primary-300) 82%,
+    var(--clr-primary-500) 82%,
+    var(--clr-primary-500) 86%,
+    var(--clr-primary-300) 86%
+  );
+
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.25),
+    inset 8px -4px 6px var(--clr-primary-opacity-300),
+    inset -8px 4px 8px rgba(255, 235, 199, 0.5),
+    inset 20px -5px 12px var(--clr-primary-500),
+    0 0 100px rgba(255, 255, 255, 0.35);
+  transform: rotateZ(-15deg);
+}
+
+.planet::before {
+  // position
+  position: absolute;
+  content: '';
+  display: block;
+
+  // sizing
+  width: 100%;
+  height: 100%;
+
+  // styling
+  box-sizing: border-box;
+  border: 16px solid var(--clr-neutral-800);
+  border-top-width: 0;
+  border-radius: 50%;
+  box-shadow: 0 -2px 0 var(--clr-primary-500);
+  animation: rings1 0.8s infinite linear;
+}
+
+.planet::after {
+  // position
+  position: absolute;
+  content: '';
+  display: block;
+
+  // sizing
+  width: 100%;
+  height: 100%;
+
+  //styling
+  box-sizing: border-box;
+  border: 8px solid var(--clr-primary-500);
+  border-top-width: 0;
+  border-radius: 50%;
+  box-shadow: 0 -2px 0 var(--clr-secondary-300);
+  animation: rings2 0.8s infinite linear;
+}
+
+// animations
+@keyframes rings1 {
+  0% {
+    transform: rotateX(65deg) rotateZ(0deg) scale(1.75);
+  }
+  100% {
+    transform: rotateX(65deg) rotateZ(360deg) scale(1.75);
+  }
+}
+
+@keyframes rings2 {
+  0% {
+    transform: rotateX(65deg) rotateZ(0deg) scale(1.7);
+  }
+  100% {
+    transform: rotateX(65deg) rotateZ(360deg) scale(1.7);
+  }
+}

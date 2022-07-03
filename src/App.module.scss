@@ -1,0 +1,73 @@
+@use './styles/utilities/flow';
+@use './styles/abstracts/variables';
+@use './styles//abstracts/breakpoints';
+
+.container {
+  //layout
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block: flow.$padding-md;
+}
+
+.input {
+  //typography
+  font-size: 1.5rem;
+  font-family: inherit;
+
+  //styling
+  border-radius: 5px;
+  background-color: var(--clr-white-opacity-200);
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: inherit;
+
+  //others
+  width: clamp(28rem, 80vw, 40rem);
+  padding: 1.5rem 2rem;
+  transition: all 0.3s;
+
+  &:focus {
+    box-shadow: variables.$shadow-white-light;
+    outline: none;
+    border-bottom: 3px solid var(--clr-secondary-300);
+  }
+
+  &::-webkit-input-placeholder {
+    color: var(--clr-neutral-300);
+    text-align: center;
+  }
+}
+
+.input:placeholder-shown + .label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+
+.label {
+  // typography
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--clr-neutral-300);
+
+  //alignment
+  margin-top: 0.7rem;
+  text-align: center;
+
+  //others
+  display: block;
+  transition: all 0.3s;
+}
+
+.particle {
+  position: fixed;
+  bottom: 20%;
+  right: 35%;
+  z-index: -1;
+
+  @include breakpoints.respond(phone-mini) {
+    bottom: 10%;
+  }
+}

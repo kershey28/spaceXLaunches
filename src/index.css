@@ -1,13 +1,159 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*
+$color-primary: #0a0a0a
+$color-secondary : #19E4AD
+$color-tertiary: #FF3955 hsl(113.1,100%,71%)
+*/
+:root {
+  --clr-primary-100: hsl(0deg, 0%, 23.9%);
+  --clr-primary-200: hsl(0deg, 0%, 18.9%);
+  --clr-primary-300: hsl(0deg, 0%, 13.9%);
+  --clr-primary-400: hsl(0deg, 0%, 8.9%);
+  --clr-primary-500: hsl(0deg, 0%, 3.9%);
+  --clr-secondary-100: hsl(163.7deg, 80.2%, 59.6%);
+  --clr-secondary-200: hsl(163.7deg, 80.2%, 54.6%);
+  --clr-secondary-300: hsl(163.7deg, 80.2%, 49.6%);
+  --clr-secondary-400: hsl(163.7deg, 80.2%, 44.6%);
+  --clr-secondary-500: hsl(163.7deg, 80.2%, 39.6%);
+  --clr-tertiary-100: hsl(351.5deg, 100%, 71.2%);
+  --clr-tertiary-200: hsl(351.5deg, 100%, 66.2%);
+  --clr-tertiary-300: hsl(351.5deg, 100%, 61.2%);
+  --clr-tertiary-400: hsl(351.5deg, 100%, 56.2%);
+  --clr-tertiary-500: hsl(351.5deg, 100%, 51.2%);
+  --clr-quaternary-100: hsl(113.1deg, 100%, 71%);
+  --clr-quaternary-200: hsl(113.1deg, 100%, 71%);
+  --clr-quaternary-300: hsl(113.1deg, 100%, 71%);
+  --clr-quaternary-400: hsl(113.1deg, 100%, 71%);
+  --clr-quaternary-500: hsl(113.1deg, 100%, 71%);
+  --clr-neutral-100: hsl(0deg, 0%, 100%);
+  --clr-neutral-200: hsl(0deg, 0%, 87%);
+  --clr-neutral-300: hsl(0deg, 0%, 80%);
+  --clr-neutral-400: hsl(0deg, 0%, 60%);
+  --clr-neutral-500: hsl(0deg, 0%, 50%);
+  --clr-neutral-600: hsl(0deg, 0%, 40%);
+  --clr-neutral-700: hsl(0deg, 0%, 30%);
+  --clr-neutral-800: hsl(0deg, 0%, 15%);
+  --clr-neutral-900: hsl(0deg, 0%, 0%);
+  --clr-primary-opacity-100: hsla(0deg, 0%, 13.9%, 0.1);
+  --clr-primary-opacity-200: hsla(0deg, 0%, 13.9%, 0.2);
+  --clr-primary-opacity-300: hsla(0deg, 0%, 13.9%, 0.4);
+  --clr-primary-opacity-400: hsla(0deg, 0%, 13.9%, 0.6);
+  --clr-primary-opacity-500: hsla(0deg, 0%, 13.9%, 0.8);
+  --clr-secondary-opacity-100: hsla(163.7deg, 80.2%, 49.6%, 0.1);
+  --clr-secondary-opacity-200: hsla(163.7deg, 80.2%, 49.6%, 0.2);
+  --clr-secondary-opacity-300: hsla(163.7deg, 80.2%, 49.6%, 0.4);
+  --clr-secondary-opacity-400: hsla(163.7deg, 80.2%, 49.6%, 0.6);
+  --clr-secondary-opacity-500: hsla(163.7deg, 80.2%, 49.6%, 0.8);
+  --clr-tertiary-opacity-100: hsla(351.5deg, 100%, 61.2%, 0.1);
+  --clr-tertiary-opacity-200: hsla(351.5deg, 100%, 61.2%, 0.2);
+  --clr-tertiary-opacity-300: hsla(351.5deg, 100%, 61.2%, 0.4);
+  --clr-tertiary-opacity-400: hsla(351.5deg, 100%, 61.2%, 0.6);
+  --clr-tertiary-opacity-500: hsla(351.5deg, 100%, 61.2%, 0.8);
+  --clr-quaternary-opacity-100: hsla(113.1deg, 100%, 71%, 0.01);
+  --clr-quaternary-opacity-200: hsla(113.1deg, 100%, 71%, 0.02);
+  --clr-quaternary-opacity-300: hsla(113.1deg, 100%, 71%, 0.04);
+  --clr-quaternary-opacity-400: hsla(113.1deg, 100%, 71%, 0.06);
+  --clr-quaternary-opacity-500: hsla(113.1deg, 100%, 71%, 0.08);
+  --clr-white-opacity-100: hsla(0deg, 0%, 100%, 0.2);
+  --clr-white-opacity-200: hsla(0deg, 0%, 100%, 0.4);
+  --clr-white-opacity-300: hsla(0deg, 0%, 100%, 0.6);
+  --clr-white-opacity-400: hsla(0deg, 0%, 100%, 0.8);
+  --clr-white-opacity-500: hsl(0deg, 0%, 100%);
+  --clr-black-opacity-100: hsla(0deg, 0%, 0%, 0.2);
+  --clr-black-opacity-200: hsla(0deg, 0%, 0%, 0.4);
+  --clr-black-opacity-300: hsla(0deg, 0%, 0%, 0.6);
+  --clr-black-opacity-400: hsla(0deg, 0%, 0%, 0.8);
+  --clr-black-opacity-500: hsl(0deg, 0%, 0%);
+  --clr-grey-opacity-100: hsla(0deg, 0%, 30%, 0.2);
+  --clr-grey-opacity-200: hsla(0deg, 0%, 30%, 0.4);
+  --clr-grey-opacity-300: hsla(0deg, 0%, 30%, 0.6);
+  --clr-grey-opacity-400: hsla(0deg, 0%, 30%, 0.8);
+  --clr-grey-opacity-500: hsl(0deg, 0%, 30%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Font Sizes  */
+:root {
+  /* Font Sizes  */
+  --fs-display: 8rem;
+  --fs-heading: 3.6rem;
+  --fs-subheading: 2.4rem;
+  --fs-label: 1.8rem;
+  --fs-body: 1.4rem;
+  --fs-caption: 1rem;
+  /* Font Family */
+  --ff-primary: "Nunito", sans-serif;
+  --ff-accent: "Gruppo", sans-serif;
 }
+@media only screen and (max-width: 37.5em) {
+  :root {
+    --fs-display: 5rem;
+    --fs-heading: 2.5rem;
+    --fs-subheading: 2rem;
+    --fs-label: 1.4rem;
+    --fs-body: 1rem;
+    --fs-caption: 0.8rem;
+  }
+}
+
+.heading-display {
+  font-size: var(--fs-display);
+  font-weight: 300;
+  line-height: 1.2;
+  text-transform: capitalize;
+}
+
+.heading-1 {
+  font-size: var(--fs-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1rem;
+  color: var(--clr-neutral-100);
+  text-transform: capitalize;
+}
+
+.heading-2 {
+  font-size: var(--fs-subheading);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+}
+
+.heading-3 {
+  font-size: var(--fs-label);
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.caption {
+  font-size: var(--fs-caption);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: var(--clr-primary-500);
+  color: var(--clr-neutral-300);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+}
+
+::-moz-selection {
+  background-color: var(--clr-neutral-400);
+}
+
+::selection {
+  background-color: var(--clr-neutral-400);
+}/*# sourceMappingURL=index.css.map */

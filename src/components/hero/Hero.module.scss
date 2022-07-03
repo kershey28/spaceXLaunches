@@ -1,0 +1,7 @@
+.container {
+  height: 70vh;
+}
+
+.heroImg {
+  width: clamp(30rem, 70vw, 40rem);
+}

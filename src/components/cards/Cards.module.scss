@@ -1,0 +1,16 @@
+@use '../../styles/utilities/flow';
+@use '../../styles/abstracts/breakpoints';
+
+.container {
+  //layout
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: flow.$padding-sm;
+  gap: 8rem;
+
+  @include breakpoints.respond(phone-mini) {
+    gap: 5rem;
+  }
+}

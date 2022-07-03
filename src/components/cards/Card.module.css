@@ -1,0 +1,213 @@
+.container {
+  background-image: linear-gradient(to right bottom, var(--clr-white-opacity-100), transparent, transparent);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border-right: 1px solid var(--clr-white-opacity-100);
+  border-bottom: 1px solid var(--clr-white-opacity-100);
+  list-style: none;
+  border-radius: 10px;
+  box-shadow: 0 1rem 2rem rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  width: clamp(28rem, 80vw, 80rem);
+  padding: 5rem;
+  position: relative;
+  display: grid;
+  grid-template-areas: "head" "patch" "det" "btn";
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+@media only screen and (max-width: 23.75em) {
+  .container {
+    padding: 3rem 1rem;
+  }
+}
+.container .headingBox {
+  grid-area: head;
+}
+.container .patch {
+  grid-area: patch;
+}
+.container .detailsBox {
+  grid-area: det;
+}
+.container .successBtn,
+.container .failedBtn {
+  grid-area: btn;
+}
+
+.headingBox {
+  text-align: center;
+}
+
+.detailsBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.date {
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.patch {
+  width: clamp(18rem, 60vw, 30rem);
+  transition: all 0.5s;
+  -webkit-animation: clipReveal 1s backwards ease-out, filterOut 1s backwards ease-out;
+          animation: clipReveal 1s backwards ease-out, filterOut 1s backwards ease-out;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.details {
+  max-width: 40rem;
+}
+
+.videoBox,
+.articleBox,
+.dateBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.video:hover + .videoIcon,
+.article:hover + .articleIcon {
+  fill: var(--clr-neutral-100);
+}
+
+.success,
+.failed,
+.upcoming {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 23.75em) {
+  .success,
+.failed,
+.upcoming {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+.gapMini {
+  gap: 1rem;
+}
+
+.gapReg {
+  gap: 5rem;
+}
+@media only screen and (max-width: 23.75em) {
+  .gapReg {
+    gap: 3rem;
+  }
+}
+
+.success {
+  color: var(--clr-secondary-300);
+}
+
+.failed {
+  color: var(--clr-tertiary-300);
+}
+
+.upcoming {
+  color: var(--clr-quaternary-300);
+}
+
+.successBtn {
+  background-color: var(--clr-secondary-300);
+  border: 1px solid var(--clr-secondary-500);
+}
+
+.failedBtn {
+  background-color: var(--clr-tertiary-300);
+  border: 1px solid var(--clr-tertiary-500);
+}
+
+.upcomingBtn {
+  background-color: var(--clr-quaternary-300);
+  border: 1px solid var(--clr-quaternary-500);
+}
+
+@-webkit-keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  80% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  80% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@-webkit-keyframes clipReveal {
+  from {
+    -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@keyframes clipReveal {
+  from {
+    -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  to {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@-webkit-keyframes filterOut {
+  0% {
+    filter: grayscale(0.9);
+  }
+  100% {
+    filter: grayscale(0.9);
+  }
+}
+@keyframes filterOut {
+  0% {
+    filter: grayscale(0.9);
+  }
+  100% {
+    filter: grayscale(0.9);
+  }
+}
+.moveInBottom {
+  -webkit-animation: moveInBottom 1s backwards ease-out;
+          animation: moveInBottom 1s backwards ease-out;
+}
+
+.hidden {
+  opacity: 0;
+}/*# sourceMappingURL=Card.module.css.map */

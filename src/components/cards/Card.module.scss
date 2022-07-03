@@ -1,0 +1,196 @@
+@use '../../styles/abstracts/mixins';
+@use '../../styles/utilities/flow';
+@use '../../styles/abstracts/breakpoints';
+@use '../../styles/abstracts/variables';
+
+.container {
+  //styling
+  @include mixins.glass-gradient();
+  list-style: none;
+  border-radius: 10px;
+  box-shadow: variables.$shadow-white-light;
+
+  //sizing
+  overflow: hidden;
+  width: clamp(28rem, 80vw, 80rem);
+  padding: flow.$padding-md;
+
+  @include breakpoints.respond(phone-mini) {
+    padding: flow.$padding-sm flow.$padding-mn;
+  }
+
+  //layout
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    'head'
+    'patch'
+    'det'
+    'btn';
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+
+  // grid children
+  .headingBox {
+    grid-area: head;
+  }
+
+  .patch {
+    grid-area: patch;
+  }
+
+  .detailsBox {
+    grid-area: det;
+  }
+
+  .successBtn,
+  .failedBtn {
+    grid-area: btn;
+  }
+}
+
+.headingBox {
+  text-align: center;
+}
+
+.detailsBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.date {
+  margin-top: flow.$margin-mn;
+  font-style: italic;
+}
+
+.patch {
+  width: clamp(18rem, 60vw, 30rem);
+  transition: all 0.5s;
+  animation: clipReveal 1s backwards ease-out, filterOut 1s backwards ease-out;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.details {
+  max-width: 40rem;
+}
+
+.videoBox,
+.articleBox,
+.dateBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.video:hover + .videoIcon,
+.article:hover + .articleIcon {
+  fill: var(--clr-neutral-100);
+}
+
+.success,
+.failed,
+.upcoming {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  text-transform: uppercase;
+
+  @include breakpoints.respond(phone-mini) {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+// conditional classes
+.gapMini {
+  gap: 1rem;
+}
+
+.gapReg {
+  gap: 5rem;
+
+  @include breakpoints.respond(phone-mini) {
+    gap: 3rem;
+  }
+}
+
+.success {
+  color: var(--clr-secondary-300);
+}
+
+.failed {
+  color: var(--clr-tertiary-300);
+}
+
+.upcoming {
+  color: var(--clr-quaternary-300);
+}
+
+.successBtn {
+  background-color: var(--clr-secondary-300);
+  border: 1px solid var(--clr-secondary-500);
+}
+
+.failedBtn {
+  background-color: var(--clr-tertiary-300);
+  border: 1px solid var(--clr-tertiary-500);
+}
+
+.upcomingBtn {
+  background-color: var(--clr-quaternary-300);
+  border: 1px solid var(--clr-quaternary-500);
+}
+
+// animations
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+
+  80% {
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes clipReveal {
+  from {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes filterOut {
+  0% {
+    filter: grayscale(0.9);
+  }
+
+  100% {
+    filter: grayscale(0.9);
+  }
+}
+
+// animation classes
+.moveInBottom {
+  animation: moveInBottom 1s backwards ease-out;
+}
+
+.hidden {
+  opacity: 0;
+}
